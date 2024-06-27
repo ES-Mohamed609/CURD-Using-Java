@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CURD2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>STUDENT INFO</h2>
+        <div class="addinfo">
+            <input type="text" id="name" placeholder="Enter your name" required title="Name can only contain letters and spaces." oninput="validateInput(event)">
+            <div id="error" class="error"></div>
+            <label for="colors">Choose your favorite color:</label>
+            <input type="color" name="colors" id="colors" required>
+            <input type="date" id="date" placeholder="Enter your birth date" required>
+            <input type="number" id="courses" placeholder="Enter the number of courses" required>
+            <button onclick="saving()">Save</button> 
+        </div>
+        <div class="searching">
+            <h3>Search...</h3>
+            <input type="search" id="text-search" onkeyup="searching()" placeholder="Search for Texts">
+            <input type="search" id="number-search" onkeyup="searching()" placeholder="Search for Numbers">
+        </div>
+        <table id="table">
+            <thead>
+                <tr>
+                    <th>S.no</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th>Date</th>
+                    <th>numOfCourses</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--Rows will appear here-->
+            </tbody>
+        </table>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
