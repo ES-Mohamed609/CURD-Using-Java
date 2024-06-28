@@ -20,8 +20,10 @@
         </div>
         <div class="searching">
             <h3>Search...</h3>
-            <input type="search" id="text-search" onkeyup="searching()" placeholder="Search for Texts">
-            <input type="search" id="number-search" onkeyup="searching()" placeholder="Search for Numbers">
+            <input type="search" id="text-search" oninput="validateSearchInput(event, 'text')" onkeyup="searching()" placeholder="Search for Texts">
+            <div id="text-error" class="error"></div>
+            <input type="search" id="number-search" oninput="validateSearchInput(event, 'number')" onkeyup="searching()" placeholder="Search for Numbers">
+            <div id="number-error" class="error"></div>
         </div>
         <table id="table">
             <thead>
