@@ -15,6 +15,32 @@ function validateInput(event) {
     }
 }
 
+function validateSearchInput(event, type) {
+    const input = event.target.value;
+    const textErrorDiv = document.getElementById('text-error');
+    const numberErrorDiv = document.getElementById('number-error');
+
+    if (type === 'text') {
+        // Validation: only letters and spaces allowed
+        const lettersOnly = /^[A-Za-z\s]*$/;
+        if (!lettersOnly.test(input)) {
+            textErrorDiv.textContent = 'Search term can only contain letters and spaces.';
+            event.target.value = input.replace(/[^A-Za-z\s]/g, '');
+        } else {
+            textErrorDiv.textContent = '';
+        }
+    } else if (type === 'number') {
+        // Validation: only numbers allowed
+        const numbersOnly = /^[0-9]*$/;
+        if (!numbersOnly.test(input)) {
+            numberErrorDiv.textContent = 'Search term can only contain numbers.';
+            event.target.value = input.replace(/[^0-9]/g, '');
+        } else {
+            numberErrorDiv.textContent = '';
+        }
+    }
+}
+
 function saving() {
     let name = document.getElementById('name').value;
     let color = document.getElementById('colors').value;
@@ -29,8 +55,8 @@ function saving() {
             <td data-label="Colors">${color}</td>
             <td data-label="Date">${years}</td>
             <td data-label="Courses">${courses}</td>
-            <td data-label="Edit"><span class="edit-btn" onclick="editItem(this)">✏️</span></td>
-            <td data-label="Delete"><span class="delete-btn" onclick="deleteItem(this)">❌</span></td>
+            <td data-label="Edit"><button class="edit-btn" onclick="editItem(this)">✏️</button></td>
+            <td data-label="Delete"><button class="delete-btn" onclick="deleteItem(this)">❌</button></td>
         `;
 
         document.getElementById('name').value = '';
