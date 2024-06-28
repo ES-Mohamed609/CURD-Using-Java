@@ -41,7 +41,10 @@ function validateSearchInput(event, type) {
     }
 }
 
+
+
 function saving() {
+    console.log("Saving function called"); // تحقق من وصول الدالة لهذه النقطة
     let name = document.getElementById('name').value;
     let color = document.getElementById('colors').value;
     let years = document.getElementById('date').value;
