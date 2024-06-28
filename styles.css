@@ -78,7 +78,15 @@ table {
 
 .edit-btn, .delete-btn {
     cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    display: inline-block;
 }
+
+
 
 .highlight-cell {
     background-color: #98f298;
@@ -94,19 +102,19 @@ table {
     }
 
     .container {
-        padding: 20px;
+        padding:15px;
     }
 
     input {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     button {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     th, td {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -161,5 +169,12 @@ table {
         white-space: nowrap;
         text-align: left;
         font-weight: bold;
+    }
+
+    td:last-child {
+        padding-left: 50%;
+       
+        justify-content: space-evenly;
+        align-items: center;
     }
 }
